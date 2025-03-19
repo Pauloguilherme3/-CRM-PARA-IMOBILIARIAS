@@ -2,33 +2,14 @@
   // Adicione qualquer lógica necessária aqui
 </script>
 
-<div class="header-top-w3layouts">
-  <div class="container">
-    <div class="col-md-6 logo-w3">
-      <a href="/"><h1>PLISSENIL</h1></a>
-    </div>
-    <div class="col-md-6 phone-w3l">
-      <ul>
-        <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></li>
-        <li>(11) 3983-2986</li>
-      </ul>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
-
-
-
-
 <div class="banner-agile">
   <div class="container">
     <h2>ESPECIALIZADA</h2>
     <h3>NO ACABAMENTO <span>EM PLISSADOS</span></h3>
-    <p>Somos uma oficina de mão de obra especializada em criação de plissados.</p>
+    <p>somos uma oficina de mão de obra especializada em criação de plissados.</p>
     <a href="/empresa">Saiba mais</a>
   </div>
 </div>
-
 <div class="top-products">
   <div class="container">
     <h3>O que fazemos...</h3>
@@ -42,24 +23,24 @@
           <div class="tab-1 resp-tab-content resp-tab-content-active" style="display:block" aria-labelledby="tab_item-0">
             <div class="col-md-3 top-product-grids tp1">
               <a href="#"><div class="product-img">
-                <img src="/lib/imagens/06.jpg" alt="">
-                <div class="p-mask"></div>
+                <img src="/imagens/06.jpg" alt="">
+              
               </div></a>
               <h4>Mão de Obra</h4>
               <h5>Serviços de Plissados</h5>
             </div>
             <div class="col-md-3 top-product-grids tp2">
               <a href="#"><div class="product-img">
-                <img src="/images/tp2.jpg" alt="">
-                <div class="p-mask"></div>
+                <img src="/imagens/05.jpg" alt="">
+                
               </div></a>
               <h4>Mão de Obra</h4>
               <h5>Serviços de Plissados</h5>
             </div>
             <div class="col-md-3 top-product-grids tp3">
               <a href="#"><div class="product-img">
-                <img src="/images/tp3.jpg" alt="">
-                <div class="p-mask"></div>
+                <img src="/images/07.jpg" alt="">
+                
               </div></a>
               <h4>Mão de Obra</h4>
               <h5>Serviços de Plissados</h5>
@@ -67,7 +48,7 @@
             <div class="col-md-3 top-product-grids tp4">
               <a href="#"><div class="product-img">
                 <img src="/images/tp4.jpg" alt="">
-                <div class="p-mask"></div>
+                
               </div></a>
               <h4>Mão de Obra</h4>
               <h5>Serviços de Plissados</h5>
@@ -137,7 +118,7 @@
 
   .logo-w3 h1 {
     font-size: 2rem;
-    color: #0a0909;
+    color: #333;
   }
 
   .phone-w3l ul {
@@ -151,12 +132,24 @@
     margin-right: 0.5rem;
   }
 
- 
+  .navbar-default {
+    background-color: #fff;
+    border: none;
+  }
+
+  .navbar-nav > li > a {
+    color: #333;
+    padding: 1rem;
+  }
+
+  .navbar-nav > li > a:hover {
+    background-color: #f4f4f4;
+  }
 
   .banner-agile {
-    background: url('/path/to/banner-image.jpg') no-repeat center center;
+    background: url('/imagens/banner.png') no-repeat center center;
     background-size: cover;
-    color: #030303;
+    color: #fff;
     text-align: center;
     padding: 4rem 0;
   }
@@ -171,7 +164,7 @@
 
   .banner-agile a {
     background-color: #007BFF;
-    color: #030303;
+    color: #fff;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
@@ -189,8 +182,10 @@
   }
 
   .top-products h3 {
+    display: flex;
     text-align: center;
     margin-bottom: 2rem;
+    
   }
 
   .top-product-grids {
@@ -198,11 +193,11 @@
   }
 
   .product-img {
-    position: relative;
+    position: auto;
   }
 
   .product-img img {
-    width: 100%;
+    width: 20%;
     border-radius: 5px;
   }
 

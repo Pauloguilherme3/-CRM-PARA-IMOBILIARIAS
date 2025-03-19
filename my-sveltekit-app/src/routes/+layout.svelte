@@ -29,6 +29,16 @@
     align-items: center;
     padding: 1rem;
   }
+  a {
+    text-decoration: none;
+  }
+  h1{
+    width: 0;
+    color: azure;
+    margin: 0 0 0 20px;
+    font-size: 20px;
+    font-weight: normal;
+  }
 
   .menu-icon {
     display: none;
@@ -80,6 +90,7 @@
 </style>
 
 <header>
+  <a href="/"><h1>PLISSADO</h1></a>
   <nav class="navbar">
     <div class="navbar-header">
       <!-- svelte-ignore a11y_consider_explicit_label -->
