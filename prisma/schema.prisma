@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  nome      String
+  senha     String
+  perfil    Perfil   @default(CORRETOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  leads     Lead[]
+}
+
+enum Perfil {
+  ADMIN
+  CORRETOR
+  GERENTE
+}
+
+model Lead {
+  id            String         @id @default(cuid())
+  nome          String
+  email         String
+  telefone      String?
+  origem        FonteLead      @default(SITE)
+  status        StatusLead     @default(NOVO)
+  pontuacao     Int            @default(0)
+  observacoes   String?
+  usuario       Usuario        @relation(fields: [usuarioId], references: [id])
+  usuarioId     String
+  imovelInteresse Imovel[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+enum FonteLead {
+  SITE
+  FACEBOOK
+  INSTAGRAM
+  INDICACAO
+  PLANTAO
+}
+
+enum StatusLead {
+  NOVO
+  QUALIFICADO
+  EM_CONTATO
+  PROPOSTA
+  CONVERTIDO
+  DESCARTADO
+}
+
+model Imovel {
+  id              String        @id @default(cuid())
+  titulo          String
+  descricao       String
+  valor           Float
+  area            Float
+  quartos         Int
+  banheiros       Int
+  vagas           Int
+  endereco        Endereco?
+  status          StatusImovel  @default(DISPONIVEL)
+  tipoImovel      TipoImovel
+  leads           Lead[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+enum StatusImovel {
+  DISPONIVEL
+  RESERVADO
+  VENDIDO
+}
+
+enum TipoImovel {
+  APARTAMENTO
+  CASA
+  TERRENO
+  COBERTURA
+  SALA_COMERCIAL
+}
+
+model Endereco {
+  id            String  @id @default(cuid())
+  logradouro    String
+  numero        String?
+  complemento   String?
+  bairro        String
+  cidade        String
+  estado        String
+  cep           String
+  imovel        Imovel  @relation(fields: [imovelId], references: [id])
+  imovelId      String  @unique
+}
